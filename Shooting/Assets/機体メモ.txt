@@ -1,0 +1,8 @@
+主役機
+・Starship(1)
+・StarSparrow(Red)(2)
+・SpaceShipPack(3)
+ボス機
+・UAV Trident(1)
+・SF_Corvette-F3(2)
+・YuliFM-MotherShipA32(3)
