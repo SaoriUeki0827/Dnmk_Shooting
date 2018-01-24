@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Enemy : MonoBehaviour
+public class Enemy_Ori : MonoBehaviour
 {
     static readonly int NUM_BULLET_TYPE = 2;        //弾丸の種類。
     public Vector3 moveDir;
