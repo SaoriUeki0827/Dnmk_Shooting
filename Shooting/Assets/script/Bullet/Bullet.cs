@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
     public GameObject EnemyExplosion;
     Camera mainCamera;
     float explosionTimer = 0;
+    public float speed=0.05f;
     // Use this for initialization
     void Start () {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>(); ;
@@ -14,8 +15,8 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 pos = transform.localPosition;
-        pos += moveDir * 0.05f;
-        transform.localPosition = pos;
+        pos += transform.TransformDirection(Vector3.forward)*speed;
+        transform.position = pos;
         pos = mainCamera.WorldToScreenPoint(pos);
         if((int)pos.x < mainCamera.pixelRect.xMin
             || (int)pos.x > mainCamera.pixelRect.xMax
