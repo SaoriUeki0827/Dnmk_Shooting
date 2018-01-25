@@ -232,9 +232,10 @@
     <Compile Include="Assets\script\Bullet\BulletExplosion.cs" />
     <Compile Include="Assets\script\Bullet\BulletShotParticle.cs" />
     <Compile Include="Assets\script\Bullet\BulletShotSE.cs" />
+    <Compile Include="Assets\script\Bullet\Enemy.cs" />
     <Compile Include="Assets\script\Bullet\PlayerBullet.cs" />
     <Compile Include="Assets\script\Common.cs" />
-    <Compile Include="Assets\script\Enemy.cs" />
+    <Compile Include="Assets\script\Enemy_Ori.cs" />
     <Compile Include="Assets\script\EnemyExplosion.cs" />
     <Compile Include="Assets\script\EnemyManager.cs" />
     <Compile Include="Assets\script\ExplosionSound.cs" />
@@ -244,6 +245,8 @@
     <Compile Include="Assets\script\GameClearEffect.cs" />
     <Compile Include="Assets\script\GameManager.cs" />
     <Compile Include="Assets\script\inoue\Enemy.cs" />
+    <Compile Include="Assets\script\Matsuzawa\Stage01\Background.cs" />
+    <Compile Include="Assets\script\Matsuzawa\Stage03\Background.cs" />
     <Compile Include="Assets\script\ObjectPool.cs" />
     <Compile Include="Assets\script\Player.cs" />
     <Compile Include="Assets\script\Score.cs" />
