@@ -35,7 +35,7 @@ public class Title : MonoBehaviour {
                 if(goCommon.GetComponent<FadeIn>() == null)
                 {
                     //フェードインが終わった。
-                    SceneManager.LoadScene("game");
+                    SceneManager.LoadScene("Stage01");
                 }
                 break;
         }

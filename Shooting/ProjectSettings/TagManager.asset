@@ -7,6 +7,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Bullet
+  - Battery
   layers:
   - Default
   - TransparentFX

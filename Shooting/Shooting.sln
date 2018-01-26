@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooting", "Shooting.csproj", "{CEF62DE8-57DD-35CF-A6B5-EBFA0FC84CC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooting.Plugins", "Shooting.Plugins.csproj", "{6216FC86-F438-0F2C-F065-316EF2A04CB5}"

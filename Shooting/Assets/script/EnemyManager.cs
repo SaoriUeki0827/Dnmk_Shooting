@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyManager : MonoBehaviour {
-    float timer;
+    float timer = 0.0f;
     public static EnemyManager instance;
     public GameObject enemyOriginal;
     public int numEnemy { get; set; }

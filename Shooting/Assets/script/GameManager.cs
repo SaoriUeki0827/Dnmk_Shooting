@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public GameObject GameBGM;
     public GameObject BossBGM;
     public GameObject bossPrefab;
+    static public int StageNo = 1;
+    int[] clearScore = {0, 100, 1000, 2000 };
     
     public Score score { get; private set; }
     AudioSource bgmSource;
@@ -60,8 +62,9 @@ public class GameManager : MonoBehaviour {
         switch (gameState)
         {
             case GameState.Normal:
-                //
-                if (score.point > 2000)
+                //通常戦。一定数討伐
+
+                if (score.point > clearScore[StageNo])
                 {
                     //すべての敵を爆発させる。
                     Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();

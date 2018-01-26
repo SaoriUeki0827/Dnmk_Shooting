@@ -11,8 +11,6 @@ public class Boss : MonoBehaviour {
     GameObject bossClash;
     int numBullet = 18;    //弾丸をいくつ生成する。
 
-
-
     enum State
     {
         Enter,      //入場。
@@ -22,7 +20,7 @@ public class Boss : MonoBehaviour {
     State state = State.Enter;
     float timer = 0.0f;
     Vector3 moveDir = new Vector3(1.0f, 0.0f, 0.0f);
-    int HP = 250;
+    int[] HP= {0, 100, 200, 300 };
     // Use this for initialization
     void Start () {
         bossEnter = gameObject.AddComponent<BossEnter>();
@@ -95,22 +93,19 @@ public class Boss : MonoBehaviour {
             transform.localPosition = oldPos;
         }   
         timer += Time.deltaTime;
-        if (timer > 0.1f)
+        if (timer > 0.1)
         {
+            GameObject newBullet = null;
+            for (int i = 0; i < transform.childCount; i++)
             {
-                //同心円状に飛ぶ弾丸を生成。
-                float angle = 360.0f / numBullet;
-                float randomAngle = UnityEngine.Random.Range(0.0f, 360.0f);
-
-                GameObject newBullet = null;
-                for (int i = 0; i < numBullet; i++)
+                if (transform.GetChild(i).tag == "Battery")
                 {
-                    newBullet = ObjectPool.instance.GetGameObject(bulletOriginal, transform.position, transform.rotation);
-                    newBullet.transform.localPosition = transform.localPosition;
+                    Transform shotPosition = transform.GetChild(i);
+                    newBullet = ObjectPool.instance.GetGameObject(bulletOriginal, shotPosition.position, shotPosition.rotation);
+                    //newBullet = Instantiate(bulletOriginal);
+                    //newBullet.transform.localPosition = shotPosition.localPosition;
                     Bullet bullet = newBullet.GetComponent<Bullet>();
                     bullet.tag = "EnemyBullet";
-                    bullet.moveDir.x = Mathf.Cos(Mathf.Deg2Rad * (angle * i + randomAngle));
-                    bullet.moveDir.y = Mathf.Sin(Mathf.Deg2Rad * (angle * i + randomAngle));
                 }
             }
             timer = 0.0f;
@@ -118,15 +113,15 @@ public class Boss : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (HP != 0 && collider.tag != "EnemyBullet" && collider.gameObject.GetComponent<PlayerBullet>() != null)
+        if (HP[GameManager.StageNo] != 0 && collider.tag != "EnemyBullet" && collider.gameObject.GetComponent<PlayerBullet>() != null)
         {
             SoundManager.instance.RequestPlayExplosionSound();
-            HP -= 1;
+            HP[GameManager.StageNo] -= 1;
             if (!bossDamageEffect)
             {
                 bossDamageEffect = gameObject.AddComponent<BossDamageEffect>();
             }
-            if(HP == 0)
+            if(HP[GameManager.StageNo] == 0)
             {
                 //ボスのHPが0になった。
                 Rigidbody rb = gameObject.AddComponent<Rigidbody>();

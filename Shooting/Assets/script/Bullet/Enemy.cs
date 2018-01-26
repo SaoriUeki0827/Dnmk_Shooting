@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public Vector3 moveDir;
     public GameObject bulletOriginal;
     public GameObject EnemyExplosion;
-    int numBullet = 1;    //弾をいくつ生成する。
+    int numBullet = 0;    //弾をいくつ生成する。
     float BulletInterval = 1.0f;
 
     //
@@ -22,11 +22,12 @@ public class Enemy : MonoBehaviour
         float t = Random.Range(0.1f, 0.9f);
 
         Vector3 screenPos = new Vector3();
-        screenPos.x = t * Screen.width;
+        screenPos.x = t*Screen.width;
         screenPos.y = Screen.height;
         Vector3 worldPos = cam.ScreenToWorldPoint(screenPos);
         worldPos.z = 0.0f;
         transform.localPosition = worldPos;
+        moveDir.y = -1.0f;
     }
 
     // Update is called once per frame
@@ -36,24 +37,26 @@ public class Enemy : MonoBehaviour
         if (timer > BulletInterval)
         {
             GameObject newBullet = null;
-            for (int i = 0; i < numBullet; i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                Transform shotPosition = transform.GetChild(i);
-                Debug.Log(shotPosition.position);
-                newBullet = ObjectPool.instance.GetGameObject(bulletOriginal, shotPosition.position, shotPosition.rotation);
-                //newBullet = Instantiate(bulletOriginal);
-                //newBullet.transform.localPosition = shotPosition.localPosition;
-                Bullet bullet = newBullet.GetComponent<Bullet>();
-                bullet.tag = "EnemyBullet";
+                if (transform.GetChild(i).tag == "Battery")
+                {
+                    Transform shotPosition = transform.GetChild(i);
+                    newBullet = ObjectPool.instance.GetGameObject(bulletOriginal, shotPosition.position, shotPosition.rotation);
+                    //newBullet = Instantiate(bulletOriginal);
+                    //newBullet.transform.localPosition = shotPosition.localPosition;
+                    Bullet bullet = newBullet.GetComponent<Bullet>();
+                    bullet.tag = "EnemyBullet";
+                }
             }
+            timer = 0.0f;
         }
 
-        timer = 0.0f;
         Vector3 pos = transform.localPosition;
         pos += moveDir * 0.01f;
         transform.localPosition = pos;
 
-        GetComponent<Rigidbody>().velocity = transform.up.normalized * 10; if (GetComponentInChildren<Renderer>().isVisible == false)
+        if (GetComponentInChildren<Renderer>().isVisible == false)
         {
             Object.Destroy(gameObject);
         }
@@ -75,7 +78,7 @@ public class Enemy : MonoBehaviour
     public void RequestDead()
     {
         GameObject Ps = ObjectPool.instance.GetGameObject(EnemyExplosion, transform.position, transform.rotation);
-        Ps.transform.localPosition = transform.localPosition;
+        Ps.transform.position = transform.position;
         //To 松澤
         //ここに機体が爆発す音を再生するコードを記入する。
         //Unityでの音の鳴らし方は自分で調べる。
