@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public GameObject BossBGM;
     public GameObject bossPrefab;
     static public int StageNo = 1;
-    int[] clearScore = {0, 100, 1000, 2000 };
+    int[] clearScore = {0, 100, 200, 500 };
     
     public Score score { get; private set; }
     AudioSource bgmSource;

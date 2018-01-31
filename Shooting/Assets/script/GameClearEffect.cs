@@ -3,7 +3,9 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System;
 
-public class GameClearEffect : MonoBehaviour {
+public class GameClearEffect : MonoBehaviour
+{
+    //GameObject goCommon = GameObject.Find("Common");
     GameObject clear;
     int Count = 0;
     enum Step
@@ -100,7 +102,13 @@ public class GameClearEffect : MonoBehaviour {
                 Count++;
                 if (Count > 120)
                 {
-                    SceneManager.LoadScene("Title");
+                    //goCommon.AddComponent<FadeIn>();
+                    //if (goCommon.GetComponent<FadeIn>() == null)
+                    //{
+                        GameManager.StageNo++;
+                        SceneManager.LoadScene(GameManager.StageNo);
+                    //}
+
                 }
                 break;
         }
