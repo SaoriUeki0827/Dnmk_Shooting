@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &173715300
 AudioListener:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 606595868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.5, y: 290.5, z: 0}
+  m_LocalPosition: {x: 270, y: 385.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1936082575}
@@ -996,8 +996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameOver: 0
-  GameBGM: {fileID: 1000010251141238, guid: 16b11f6740289884fae3639d83bade8b, type: 2}
-  BossBGM: {fileID: 1000012027478614, guid: e61a58877a6b61c4798c3c139b54f0aa, type: 2}
+  GameBGM: {fileID: 1055140489254264, guid: 2309059c967ba4549a25370cb9007902, type: 2}
+  BossBGM: {fileID: 1948842507350940, guid: 84b22e9730743b64cbd6a25faf3d37a2, type: 2}
   bossPrefab: {fileID: 1000011993679788, guid: faeeef97e097c1347848eb01672ef5ac, type: 2}
   gameState: 0
 --- !u!1 &1549833802
@@ -1340,7 +1340,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936082574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250.5, y: 79.5, z: 0}
+  m_LocalPosition: {x: 144, y: 174.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1053218306}

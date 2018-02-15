@@ -8,6 +8,7 @@ TagManager:
   - PlayerBullet
   - Bullet
   - Battery
+  - MissileBt
   layers:
   - Default
   - TransparentFX

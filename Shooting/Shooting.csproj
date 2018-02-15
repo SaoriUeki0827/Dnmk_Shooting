@@ -233,7 +233,10 @@
     <Compile Include="Assets\script\Bullet\BulletShotParticle.cs" />
     <Compile Include="Assets\script\Bullet\BulletShotSE.cs" />
     <Compile Include="Assets\script\Bullet\Enemy.cs" />
+    <Compile Include="Assets\script\Bullet\EnemyMissile.cs" />
+    <Compile Include="Assets\script\Bullet\LookAt.cs" />
     <Compile Include="Assets\script\Bullet\PlayerBullet.cs" />
+    <Compile Include="Assets\script\Bullet\Rotate.cs" />
     <Compile Include="Assets\script\Common.cs" />
     <Compile Include="Assets\script\Emitter.cs" />
     <Compile Include="Assets\script\Enemy_Ori.cs" />
@@ -246,11 +249,16 @@
     <Compile Include="Assets\script\GameClearEffect.cs" />
     <Compile Include="Assets\script\GameManager.cs" />
     <Compile Include="Assets\script\inoue\Enemy.cs" />
+    <Compile Include="Assets\script\inoue\HpBarCtr1.cs" />
+    <Compile Include="Assets\script\inoue\TextController.cs" />
     <Compile Include="Assets\script\Matsuzawa\Stage01\Background.cs" />
     <Compile Include="Assets\script\Matsuzawa\Stage03\Background.cs" />
     <Compile Include="Assets\script\ObjectPool.cs" />
     <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\script\SceneFade.cs" />
     <Compile Include="Assets\script\Score.cs" />
+    <Compile Include="Assets\script\SingletonMonoBehaviour.cs" />
+    <Compile Include="Assets\script\size\GameInitial.cs" />
     <Compile Include="Assets\script\skyBoxCamera.cs" />
     <Compile Include="Assets\script\SoundFadeIn.cs" />
     <Compile Include="Assets\script\SoundFadeOut.cs" />
@@ -341,6 +349,7 @@
     <None Include="Assets\shader\Dynamic_Illum_Spec.shader" />
     <None Include="Assets\shader\LuminanceShader.shader" />
     <None Include="Assets\shader\LuminanceShader2.shader" />
+    <None Include="Assets\shader\SceneChangeSheader.shader" />
     <None Include="Assets\shader\how_to_use.txt" />
     <None Include="Assets\機体メモ.txt" />
   </ItemGroup>

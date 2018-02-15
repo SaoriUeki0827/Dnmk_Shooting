@@ -340,6 +340,7 @@
     <None Include="Assets\shader\Dynamic_Illum_Spec.shader" />
     <None Include="Assets\shader\LuminanceShader.shader" />
     <None Include="Assets\shader\LuminanceShader2.shader" />
+    <None Include="Assets\shader\SceneChangeSheader.shader" />
     <None Include="Assets\shader\how_to_use.txt" />
     <None Include="Assets\機体メモ.txt" />
   </ItemGroup>

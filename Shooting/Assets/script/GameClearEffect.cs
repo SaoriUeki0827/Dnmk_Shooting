@@ -106,7 +106,10 @@ public class GameClearEffect : MonoBehaviour
                     //if (goCommon.GetComponent<FadeIn>() == null)
                     //{
                         GameManager.StageNo++;
-                        SceneManager.LoadScene(GameManager.StageNo);
+                    if (GameManager.StageNo <= 3)
+                        SceneFade.Instance.LoadScene("Stage0" + GameManager.StageNo);
+                    else
+                        SceneFade.Instance.LoadScene("Title");
                     //}
 
                 }

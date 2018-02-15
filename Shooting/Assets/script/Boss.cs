@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour {
     };
     State state = State.Enter;
     float timer = 0.0f;
-    Vector3 moveDir = new Vector3(1.0f, 0.0f, 0.0f);
+    public Vector3 moveDir = new Vector3(1.0f, 0.0f, 0.0f);
     int[] HP= {0, 100, 200, 300 };
     // Use this for initialization
     void Start () {
@@ -93,7 +93,7 @@ public class Boss : MonoBehaviour {
             transform.localPosition = oldPos;
         }   
         timer += Time.deltaTime;
-        if (timer > 0.1)
+        if (timer > 0.5)
         {
             GameObject newBullet = null;
             for (int i = 0; i < transform.childCount; i++)

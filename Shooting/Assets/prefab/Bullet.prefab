@@ -114,6 +114,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   EnemyExplosion: {fileID: 1000010082297698, guid: 00b7b4d7331b39b4da4ceffe76a32a62,
     type: 2}
+  speed: 0.05
 --- !u!135 &135000012129551622
 SphereCollider:
   m_ObjectHideFlags: 1
