@@ -270,13 +270,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Shooting.Plugins.csproj">
-      <Project>{6216FC86-F438-0F2C-F065-316EF2A04CB5}</Project>
-      <Name>Shooting.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Shooting.csproj">
       <Project>{CEF62DE8-57DD-35CF-A6B5-EBFA0FC84CC0}</Project>
       <Name>Shooting</Name>
+    </ProjectReference>
+    <ProjectReference Include="Shooting.Plugins.csproj">
+      <Project>{6216FC86-F438-0F2C-F065-316EF2A04CB5}</Project>
+      <Name>Shooting.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
